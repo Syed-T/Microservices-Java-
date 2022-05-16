@@ -34,7 +34,7 @@ public class UserService {
         //For department call microservice: department-service
         // Use RestTemplate
         log.info("USER's Department Id " + user.getDepartmentId());
-        Department department = restTemplate.getForObject("http://localhost:8081/departments/" + user.getDepartmentId(), Department.class);
+        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(), Department.class);
         log.info("ms department-service worked !");
         res.setUser(user);
         res.setDepartment(department);
